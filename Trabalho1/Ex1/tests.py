@@ -15,3 +15,15 @@ class TestCases(unittest.TestCase):
         n = 5
         result = "AMEDACSCOGIIINRTSFAEATRACLEANIAMUTAEASIUDAG"
         self.assertEqual(result, spartan_scytale_cipher(entry, n), result)
+
+    def test_small_example(self):
+        entry = "heyheyhey"
+        n = 3
+        result = "HHHEEEYYY"
+        self.assertEqual(result, spartan_scytale_cipher(entry, n), result)
+
+    def test_ppt_example(self):
+        entry = "unodostrescuatrocincoseissieteochonuevediez"
+        n = 10
+        result = "UOEACOSTHENSSTISSEOVOTCRNEIONEDRUOCIECUD"
+        self.assertEqual(result, spartan_scytale_cipher(entry, n), result)
