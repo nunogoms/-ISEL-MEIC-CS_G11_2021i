@@ -22,7 +22,7 @@ class TestCases(unittest.TestCase):
         result = "HHHEEEYYY"
         self.assertEqual(result, spartan_scytale_cipher(entry, n), result)
 
-    def test_ppt_example(self):
+    def test_another_example(self):
         entry = "unodostrescuatrocincoseissieteochonuevediez"
         n = 10
         result = "UOEACOSTHENSSTISSEOVOTCRNEIONEDRUOCIECUD"
