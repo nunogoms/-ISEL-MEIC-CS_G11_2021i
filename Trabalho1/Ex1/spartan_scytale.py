@@ -1,6 +1,6 @@
 # clear_text stands for the the text to cipher,
 # n stands for the width of the scytale
-def spartan_scytale(clear_text: str, n: int):
+def spartan_scytale_cipher(clear_text: str, n: int):
     # We have to know the size of each line, since they have to be divided into the width of scytale to align
     # correctly when it is time to put them together
     line_size = int((len(clear_text) / n) + 0.5)
@@ -26,19 +26,5 @@ def spartan_scytale(clear_text: str, n: int):
     return cipher_text.upper()
 
 
-def testing():
-    # Exercise 1.a) Example
-    entry1 = "abatalhacomospersasteralugarnodesfiladeirodastermopilas"
-    n1 = 4
-    result1 = "AENDBROAASDSTAETASSELTFRHEIMARLOCAAPOLDIMUELOGIASARSPRO"
-    assert spartan_scytale(entry1, n1) == result1, "Should be : " + result1
-
-    # A powerpoint example
-    entry2 = "acitalaeumsistemadecifrausadonaantigagrecia"
-    n2 = 5
-    result2 = "AMEDACSCOGIIINRTSFAEATRACLEANIAMUTAEASIUDAG"
-    assert spartan_scytale(entry2, n2) == result2, "Should be : " + result2
-
-
 if __name__ == '__main__':
-    testing()
+    print(spartan_scytale_cipher("heyheyheyhey", 4))
