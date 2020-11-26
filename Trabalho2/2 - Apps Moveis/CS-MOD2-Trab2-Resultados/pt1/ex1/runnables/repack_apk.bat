@@ -1,0 +1,1 @@
+java -jar ..\..\apktool_2.4.1.jar b -o ..\repackaged_App.apk ..\RepackagingLab
