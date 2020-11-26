@@ -1,0 +1,1 @@
+java -jar .\apktool_2.4.1.jar d Lab2-2.apk
