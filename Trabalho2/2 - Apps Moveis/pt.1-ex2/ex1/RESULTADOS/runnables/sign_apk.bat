@@ -1,1 +1,0 @@
-jarsigner -keystore cs_g11_keystore.pfx ..\repackaged_App.apk selfsigned
