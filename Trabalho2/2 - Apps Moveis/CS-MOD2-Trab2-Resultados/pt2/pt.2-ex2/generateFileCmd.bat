@@ -1,0 +1,1 @@
+java -jar .\soot-infoflow-cmd-jar-with-dependencies.jar -a .\com.mediawoz.gotq.apk -p C:\Users\nunom\AppData\Local\Android\Sdk\platforms\android-30\android.jar -s .\SourcesAndSinks.txt -o fileOUTPUT.xml 

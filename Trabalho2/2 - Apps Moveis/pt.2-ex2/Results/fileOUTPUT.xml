@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFlowResults FileFormatVersion="102" TerminationState="DataFlowOutOfMemory">
+<Results>
+<Result>
+<Sink Statement="virtualinvoke $r1.&lt;java.io.ByteArrayOutputStream: void write(byte[],int,int)&gt;($r2, 0, $i0)" Method="&lt;em: java.lang.String a(java.io.InputStream)&gt;">
+<AccessPath Value="$r2" Type="byte[]" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r5 = virtualinvoke $r4.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;em: java.util.List a(android.content.Context,java.lang.String,boolean)&gt;">
+<AccessPath Value="$r5" Type="java.io.InputStream" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r7 = virtualinvoke $r11.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;dv: void run()&gt;">
+<AccessPath Value="$r7" Type="java.io.InputStream" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r4 = virtualinvoke $r7.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;em: java.io.InputStream a(java.lang.String)&gt;">
+<AccessPath Value="$r4" Type="java.io.InputStream" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r10 = virtualinvoke $r9.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;com.mediawoz.goweather.WeatherApp: void D()&gt;">
+<AccessPath Value="$r10" Type="java.io.InputStream" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r5 = virtualinvoke $r3.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;u: boolean a(java.lang.String)&gt;">
+<AccessPath Value="$r5" Type="java.io.InputStream" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r6 = virtualinvoke $r4.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;com.mediawoz.goweather.ThemeSettingActivity: java.util.List a(java.lang.String)&gt;">
+<AccessPath Value="$r6" Type="java.io.InputStream" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="staticinvoke &lt;android.util.Log: int d(java.lang.String,java.lang.String)&gt;(&quot;anksoft&quot;, $r8)" Method="&lt;com.anksoft.url.MMDownloadAction: void execute()&gt;">
+<AccessPath Value="$r8" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r1 = staticinvoke &lt;org.apache.http.util.EntityUtils: java.lang.String toString(org.apache.http.HttpEntity)&gt;($r7)" Method="&lt;com.anksoft.url.MMDownloadAction: java.lang.String getValidationAnswer(java.lang.String)&gt;">
+<AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="interfaceinvoke $r20.&lt;android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)&gt;(&quot;header&quot;, $r5)" Method="&lt;com.mobclick.android.MobclickAgent: org.json.JSONObject i(android.content.Context)&gt;">
+<AccessPath Value="$r5" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$d0 = virtualinvoke $r19.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.mobclick.android.MobclickAgent: org.json.JSONObject i(android.content.Context)&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r5 = virtualinvoke $r11.&lt;java.util.Locale: java.lang.String getCountry()&gt;()" Method="&lt;com.mobclick.android.MobclickAgent: org.json.JSONObject i(android.content.Context)&gt;">
+<AccessPath Value="$r5" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r19.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.mobclick.android.MobclickAgent: org.json.JSONObject i(android.content.Context)&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="staticinvoke &lt;android.util.Log: int i(java.lang.String,java.lang.String,java.lang.Throwable)&gt;(&quot;netLog&quot;, $r0, null)" Method="&lt;com.jiubang.core.net.util.NetLog: void info(java.lang.String,java.lang.Throwable)&gt;">
+<AccessPath Value="$r0" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$d2 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="$d2" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d2 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="$d2" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="d1" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="staticinvoke &lt;android.util.Log: int d(java.lang.String,java.lang.String)&gt;(&quot;HttpHelper&quot;, $r6)" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="$r6" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$d2 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="$d2" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d2 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="$d2" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="d1" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="r14 = virtualinvoke r27.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;com.anksoft.Alarmreceiver: void onReceive(android.content.Context,android.content.Intent)&gt;">
+<AccessPath Value="r27" Type="java.net.HttpURLConnection" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;java.net.URLConnection: java.net.URL url&gt;" Type="java.net.URL">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r10 = virtualinvoke r8.&lt;android.telephony.TelephonyManager: java.lang.String getDeviceId()&gt;()" Method="&lt;com.anksoft.Alarmreceiver: void onReceive(android.content.Context,android.content.Intent)&gt;">
+<AccessPath Value="$r10" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r9 = virtualinvoke r8.&lt;android.telephony.TelephonyManager: java.lang.String getLine1Number()&gt;()" Method="&lt;com.anksoft.Alarmreceiver: void onReceive(android.content.Context,android.content.Intent)&gt;">
+<AccessPath Value="$r9" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r3.&lt;java.io.DataOutputStream: void write(byte[],int,int)&gt;($r0, 0, $i0)" Method="&lt;hq: void a(byte[],java.lang.String,android.content.Context)&gt;">
+<AccessPath Value="$r3" Type="java.io.DataOutputStream" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;java.io.DataOutputStream: java.io.OutputStream innerStream&gt;" Type="java.io.OutputStream">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r2 = interfaceinvoke $r6.&lt;android.database.Cursor: java.lang.String getString(int)&gt;(2)" Method="&lt;ex: java.lang.String a(java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r2.&lt;android.os.Handler: boolean sendMessage(android.os.Message)&gt;(r1)" Method="&lt;com.jiubang.advsdk.adview.GOWeatherAdView: void postMessage(int)&gt;">
+<AccessPath Value="$r2" Type="android.os.Handler" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$d2 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="$d2" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d2 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="$d2" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="d1" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke r0.&lt;com.mediawoz.goweather.AddChinaCityActivity: void sendBroadcast(android.content.Intent)&gt;($r2)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onStop()&gt;">
+<AccessPath Value="r0" Type="com.mediawoz.goweather.AddChinaCityActivity" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;com.mediawoz.goweather.AddChinaCityActivity: java.util.ArrayList d&gt;" Type="java.util.ArrayList">
+</Field>
+<Field Value="&lt;java.util.Collection: java.lang.Object[] innerArray&gt;" Type="eu">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r15 = interfaceinvoke $r9.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onTextChanged(java.lang.CharSequence,int,int,int)&gt;">
+<AccessPath Value="$r15" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r12 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onItemClick(android.widget.AdapterView,android.view.View,int,long)&gt;">
+<AccessPath Value="$r12" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r14 = interfaceinvoke $r9.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onTextChanged(java.lang.CharSequence,int,int,int)&gt;">
+<AccessPath Value="$r14" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r9 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onItemClick(android.widget.AdapterView,android.view.View,int,long)&gt;">
+<AccessPath Value="$r9" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r3 = interfaceinvoke $r9.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onTextChanged(java.lang.CharSequence,int,int,int)&gt;">
+<AccessPath Value="$r3" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r13 = interfaceinvoke $r9.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onTextChanged(java.lang.CharSequence,int,int,int)&gt;">
+<AccessPath Value="$r13" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r14 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onItemClick(android.widget.AdapterView,android.view.View,int,long)&gt;">
+<AccessPath Value="$r14" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r13 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onItemClick(android.widget.AdapterView,android.view.View,int,long)&gt;">
+<AccessPath Value="$r13" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="r14 = virtualinvoke r27.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;com.anksoft.Alarmreceiver: void onReceive(android.content.Context,android.content.Intent)&gt;">
+<AccessPath Value="r27" Type="java.net.HttpURLConnection" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;java.net.URLConnection: java.net.URL url&gt;" Type="java.net.URL">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r10 = virtualinvoke r8.&lt;android.telephony.TelephonyManager: java.lang.String getDeviceId()&gt;()" Method="&lt;com.anksoft.Alarmreceiver: void onReceive(android.content.Context,android.content.Intent)&gt;">
+<AccessPath Value="$r10" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r9 = virtualinvoke r8.&lt;android.telephony.TelephonyManager: java.lang.String getLine1Number()&gt;()" Method="&lt;com.anksoft.Alarmreceiver: void onReceive(android.content.Context,android.content.Intent)&gt;">
+<AccessPath Value="$r9" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r10.&lt;java.net.HttpURLConnection: void connect()&gt;()" Method="&lt;em: java.util.Map a(android.content.Context,android.location.Location)&gt;">
+<AccessPath Value="$r10" Type="java.net.HttpURLConnection" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;java.net.URLConnection: java.net.URL url&gt;" Type="java.net.URL">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;em: java.util.Map a(android.content.Context,android.location.Location)&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;em: java.util.Map a(android.content.Context,android.location.Location)&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="staticinvoke &lt;android.util.Log: int d(java.lang.String,java.lang.String)&gt;(&quot;HttpHelper&quot;, $r1)" Method="&lt;com.jiubang.advsdk.adcommon.AdHttpAdapter: java.lang.String compoundAdUrl(java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$d2 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="$d2" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d2 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="$d2" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="d1 = virtualinvoke $r5.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="d1" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="d0 = virtualinvoke $r5.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice: com.jiubang.core.device.AndroidDevice$GPS getGPS(android.content.Context)&gt;">
+<AccessPath Value="d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r11.&lt;java.net.HttpURLConnection: void connect()&gt;()" Method="&lt;dv: void run()&gt;">
+<AccessPath Value="$r11" Type="java.net.HttpURLConnection" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;java.net.URLConnection: java.net.URL url&gt;" Type="java.net.URL">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r2 = virtualinvoke $r6.&lt;android.telephony.TelephonyManager: java.lang.String getDeviceId()&gt;()" Method="&lt;fb: void a(android.content.Context)&gt;">
+<AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r10.&lt;java.net.HttpURLConnection: void connect()&gt;()" Method="&lt;g: void run()&gt;">
+<AccessPath Value="$r10" Type="java.net.HttpURLConnection" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;java.net.URLConnection: java.net.URL url&gt;" Type="java.net.URL">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r2 = virtualinvoke $r6.&lt;android.telephony.TelephonyManager: java.lang.String getDeviceId()&gt;()" Method="&lt;fb: void a(android.content.Context)&gt;">
+<AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r7.&lt;java.net.HttpURLConnection: void connect()&gt;()" Method="&lt;em: java.io.InputStream a(java.lang.String)&gt;">
+<AccessPath Value="$r7" Type="java.net.HttpURLConnection" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;java.net.URLConnection: java.net.URL url&gt;" Type="java.net.URL">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;cb: void run()&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;em: java.util.Map a(android.content.Context,android.location.Location)&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;cb: void run()&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;em: java.util.Map a(android.content.Context,android.location.Location)&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke r2.&lt;java.io.FileWriter: void write(java.lang.String)&gt;($r0)" Method="&lt;com.anksoft.url.SdCardUtils: void saveLogToSdCard(java.lang.String)&gt;">
+<AccessPath Value="$r0" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r1 = staticinvoke &lt;org.apache.http.util.EntityUtils: java.lang.String toString(org.apache.http.HttpEntity)&gt;($r7)" Method="&lt;com.anksoft.url.MMDownloadAction: java.lang.String getValidationAnswer(java.lang.String)&gt;">
+<AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r3.&lt;com.mediawoz.goweather.ThemeSettingActivity: void sendBroadcast(android.content.Intent)&gt;($r13)" Method="&lt;co: void onClick(android.content.DialogInterface,int)&gt;">
+<AccessPath Value="$r3" Type="com.mediawoz.goweather.ThemeSettingActivity" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;com.mediawoz.goweather.ThemeSettingActivity: java.util.List d&gt;" Type="java.util.List">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r2 = virtualinvoke $r3.&lt;android.content.pm.PackageManager: java.util.List getInstalledPackages(int)&gt;(0)" Method="&lt;com.mediawoz.goweather.ThemeSettingActivity: void d(java.lang.String)&gt;">
+<AccessPath Value="$r2" Type="java.util.List" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r8 = virtualinvoke $r5.&lt;android.content.pm.PackageManager: java.util.List getInstalledPackages(int)&gt;(0)" Method="&lt;com.mediawoz.goweather.ThemeSettingActivity: void c(java.lang.String)&gt;">
+<AccessPath Value="$r8" Type="java.util.List" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="staticinvoke &lt;android.util.Log: int d(java.lang.String,java.lang.String)&gt;($r0, $r1)" Method="&lt;com.jiubang.core.util.Loger: void a(java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r2 = interfaceinvoke $r6.&lt;android.database.Cursor: java.lang.String getString(int)&gt;(2)" Method="&lt;ex: java.lang.String a(java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="staticinvoke &lt;android.util.Log: int i(java.lang.String,java.lang.String)&gt;(&quot;HttpHelper&quot;, $r3)" Method="&lt;com.jiubang.core.device.AndroidDevice$1: void onLocationChanged(android.location.Location)&gt;">
+<AccessPath Value="$r3" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice$1: void onLocationChanged(android.location.Location)&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.jiubang.core.device.AndroidDevice$1: void onLocationChanged(android.location.Location)&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="staticinvoke &lt;android.util.Log: int i(java.lang.String,java.lang.String)&gt;(&quot;MobclickAgent&quot;, $r6)" Method="&lt;com.mobclick.android.f: android.location.Location a()&gt;">
+<AccessPath Value="$r6" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$d0 = virtualinvoke $r4.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.mobclick.android.f: android.location.Location a()&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r4.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.mobclick.android.f: android.location.Location a()&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke r3.&lt;java.io.ByteArrayOutputStream: void write(byte[],int,int)&gt;($r37, 0, $i0)" Method="&lt;com.anksoft.Alarmreceiver: void onReceive(android.content.Context,android.content.Intent)&gt;">
+<AccessPath Value="r3" Type="java.io.ByteArrayOutputStream" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;java.io.OutputStream: byte[] innerArray&gt;" Type="byte[]">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="r14 = virtualinvoke r27.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;com.anksoft.Alarmreceiver: void onReceive(android.content.Context,android.content.Intent)&gt;">
+<AccessPath Value="r14" Type="java.io.InputStream" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="$r11 = virtualinvoke $r10.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;em: java.util.Map a(android.content.Context,android.location.Location)&gt;">
+<AccessPath Value="$r10" Type="java.net.HttpURLConnection" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;java.net.URLConnection: java.net.URL url&gt;" Type="java.net.URL">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;em: java.util.Map a(android.content.Context,android.location.Location)&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;em: java.util.Map a(android.content.Context,android.location.Location)&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r5.&lt;java.io.FileOutputStream: void write(byte[])&gt;($r6)" Method="&lt;com.anksoft.Alarmreceiver: void writeFileData(android.content.Context,java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r6" Type="byte[]" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="r14 = virtualinvoke r27.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;com.anksoft.Alarmreceiver: void onReceive(android.content.Context,android.content.Intent)&gt;">
+<AccessPath Value="r14" Type="java.io.InputStream" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="$r5 = virtualinvoke $r4.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;em: java.util.List a(android.content.Context,java.lang.String,boolean)&gt;">
+<AccessPath Value="$r4" Type="java.net.HttpURLConnection" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;java.net.URLConnection: java.net.URL url&gt;" Type="java.net.URL">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;cb: void run()&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;cb: void run()&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="$r4 = virtualinvoke $r7.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;em: java.io.InputStream a(java.lang.String)&gt;">
+<AccessPath Value="$r7" Type="java.net.HttpURLConnection" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;java.net.URLConnection: java.net.URL url&gt;" Type="java.net.URL">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;cb: void run()&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;em: java.util.Map a(android.content.Context,android.location.Location)&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;cb: void run()&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;em: java.util.Map a(android.content.Context,android.location.Location)&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="$r0 = virtualinvoke $r2.&lt;java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)&gt;($r0, &quot;&quot;)" Method="&lt;em: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r10 = interfaceinvoke $r8.&lt;org.apache.http.HttpResponse: org.apache.http.HttpEntity getEntity()&gt;()" Method="&lt;com.mapbar.android.location.r: java.lang.String c(java.lang.String)&gt;">
+<AccessPath Value="$r10" Type="org.apache.http.HttpEntity" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r4.&lt;android.content.Context: void sendBroadcast(android.content.Intent)&gt;($r5)" Method="&lt;fq: void a(fc,int)&gt;">
+<AccessPath Value="$r5" Type="android.content.Intent" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;android.content.Intent: java.lang.Object[] extraValues&gt;" Type="java.lang.String">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r2 = interfaceinvoke $r6.&lt;android.database.Cursor: java.lang.String getString(int)&gt;(2)" Method="&lt;ex: java.lang.String a(java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="staticinvoke &lt;android.util.Log: int d(java.lang.String,java.lang.String)&gt;($r0, $r1)" Method="&lt;com.exchange.Public.n: void c(java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r3 = virtualinvoke $r2.&lt;android.telephony.TelephonyManager: java.lang.String getDeviceId()&gt;()" Method="&lt;com.exchange.Public.h: java.lang.String i(android.content.Context)&gt;">
+<AccessPath Value="$r3" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="$r0 = virtualinvoke $r2.&lt;java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)&gt;($r1, &quot;&quot;)" Method="&lt;em: java.lang.String a(java.lang.String,java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r10 = interfaceinvoke $r8.&lt;org.apache.http.HttpResponse: org.apache.http.HttpEntity getEntity()&gt;()" Method="&lt;com.mapbar.android.location.r: java.lang.String c(java.lang.String)&gt;">
+<AccessPath Value="$r10" Type="org.apache.http.HttpEntity" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r4.&lt;java.net.HttpURLConnection: void connect()&gt;()" Method="&lt;em: java.util.List a(android.content.Context,java.lang.String,boolean)&gt;">
+<AccessPath Value="$r4" Type="java.net.HttpURLConnection" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;java.net.URLConnection: java.net.URL url&gt;" Type="java.net.URL">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;cb: void run()&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;cb: void run()&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="staticinvoke &lt;android.util.Log: int i(java.lang.String,java.lang.String)&gt;(&quot;MobclickAgent&quot;, $r3)" Method="&lt;com.mobclick.android.MobclickAgent: java.lang.String a(android.content.Context,org.json.JSONObject,java.lang.String,boolean)&gt;">
+<AccessPath Value="$r3" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$d0 = virtualinvoke $r19.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.mobclick.android.MobclickAgent: org.json.JSONObject i(android.content.Context)&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r5 = virtualinvoke $r11.&lt;java.util.Locale: java.lang.String getCountry()&gt;()" Method="&lt;com.mobclick.android.MobclickAgent: org.json.JSONObject i(android.content.Context)&gt;">
+<AccessPath Value="$r5" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r19.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.mobclick.android.MobclickAgent: org.json.JSONObject i(android.content.Context)&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="staticinvoke &lt;android.util.Log: int i(java.lang.String,java.lang.String)&gt;($r0, $r1)" Method="&lt;com.exchange.Public.n: void a(java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r1" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$d0 = virtualinvoke $r3.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.exchange.Public.h: double[] m(android.content.Context)&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r3.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.exchange.Public.h: double[] m(android.content.Context)&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r4.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.exchange.Public.g: android.location.Location a()&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r4.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.exchange.Public.g: android.location.Location a()&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r4.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.exchange.Public.g: android.location.Location a()&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r4.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.exchange.Public.g: android.location.Location a()&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r3 = virtualinvoke $r2.&lt;android.telephony.TelephonyManager: java.lang.String getDeviceId()&gt;()" Method="&lt;com.exchange.Public.h: java.lang.String i(android.content.Context)&gt;">
+<AccessPath Value="$r3" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r1.&lt;android.content.Context: android.content.ComponentName startService(android.content.Intent)&gt;($r3)" Method="&lt;com.exchange.Public.DownloadAgent: void &lt;init&gt;(android.content.Context,com.exchange.b.a,int,int)&gt;">
+<AccessPath Value="$r3" Type="android.content.Intent" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;android.content.Intent: java.lang.Object[] extraValues&gt;" Type="java.lang.String">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r3 = virtualinvoke $r2.&lt;android.telephony.TelephonyManager: java.lang.String getDeviceId()&gt;()" Method="&lt;com.exchange.Public.h: java.lang.String i(android.content.Context)&gt;">
+<AccessPath Value="$r3" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="$r5 = virtualinvoke $r3.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;x: void a(java.lang.String)&gt;">
+<AccessPath Value="$r3" Type="java.net.HttpURLConnection" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;java.net.URLConnection: java.net.URL url&gt;" Type="java.net.URL">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r2 = interfaceinvoke $r6.&lt;android.database.Cursor: java.lang.String getString(int)&gt;(2)" Method="&lt;ex: java.lang.String a(java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r2.&lt;com.mediawoz.goweather.EditCityActivity: void sendBroadcast(android.content.Intent)&gt;($r3)" Method="&lt;ac: void run()&gt;">
+<AccessPath Value="$r2" Type="com.mediawoz.goweather.EditCityActivity" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;com.mediawoz.goweather.EditCityActivity: java.util.ArrayList a&gt;" Type="java.util.ArrayList">
+</Field>
+<Field Value="&lt;java.util.Collection: java.lang.Object[] innerArray&gt;" Type="ah">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r2 = interfaceinvoke $r6.&lt;android.database.Cursor: java.lang.String getString(int)&gt;(2)" Method="&lt;ex: java.lang.String a(java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r2.&lt;android.content.Context: void sendBroadcast(android.content.Intent)&gt;($r5)" Method="&lt;fq: void run()&gt;">
+<AccessPath Value="$r5" Type="android.content.Intent" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;android.content.Intent: java.lang.Object[] extraValues&gt;" Type="java.lang.String">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r5 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.StatusBarService: java.util.List a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r5" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r5 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.StatusBarService: java.util.List a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r5" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r5 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.StatusBarService: java.util.List a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r5" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r10 = interfaceinvoke $r8.&lt;org.apache.http.HttpResponse: org.apache.http.HttpEntity getEntity()&gt;()" Method="&lt;com.mapbar.android.location.r: java.lang.String c(java.lang.String)&gt;">
+<AccessPath Value="$r10" Type="org.apache.http.HttpEntity" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r5 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.StatusBarService: java.util.List a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r5" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r5 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.StatusBarService: java.util.List a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r5" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r5 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.StatusBarService: java.util.List a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r5" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r2 = interfaceinvoke $r6.&lt;android.database.Cursor: java.lang.String getString(int)&gt;(2)" Method="&lt;ex: java.lang.String a(java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r2" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r5 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.StatusBarService: java.util.List a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r5" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r4 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.StatusBarService: java.util.List a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r4" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r5 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.StatusBarService: java.util.List a(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r5" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke r0.&lt;com.mediawoz.goweather.AddChinaCityActivity: void sendBroadcast(android.content.Intent)&gt;($r5)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onClick(android.view.View)&gt;">
+<AccessPath Value="r0" Type="com.mediawoz.goweather.AddChinaCityActivity" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;com.mediawoz.goweather.AddChinaCityActivity: java.util.ArrayList b&gt;" Type="java.util.ArrayList">
+</Field>
+<Field Value="&lt;java.util.Collection: java.lang.Object[] innerArray&gt;" Type="eu">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r12 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onItemClick(android.widget.AdapterView,android.view.View,int,long)&gt;">
+<AccessPath Value="$r12" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r15 = interfaceinvoke $r9.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onTextChanged(java.lang.CharSequence,int,int,int)&gt;">
+<AccessPath Value="$r15" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r9 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onItemClick(android.widget.AdapterView,android.view.View,int,long)&gt;">
+<AccessPath Value="$r9" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r14 = interfaceinvoke $r9.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onTextChanged(java.lang.CharSequence,int,int,int)&gt;">
+<AccessPath Value="$r14" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r3 = interfaceinvoke $r9.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onTextChanged(java.lang.CharSequence,int,int,int)&gt;">
+<AccessPath Value="$r3" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r14 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onItemClick(android.widget.AdapterView,android.view.View,int,long)&gt;">
+<AccessPath Value="$r14" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r13 = interfaceinvoke $r9.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onTextChanged(java.lang.CharSequence,int,int,int)&gt;">
+<AccessPath Value="$r13" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r13 = interfaceinvoke $r10.&lt;android.database.Cursor: java.lang.String getString(int)&gt;($i0)" Method="&lt;com.mediawoz.goweather.AddChinaCityActivity: void onItemClick(android.widget.AdapterView,android.view.View,int,long)&gt;">
+<AccessPath Value="$r13" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="staticinvoke &lt;android.util.Log: int i(java.lang.String,java.lang.String)&gt;(&quot;MobclickAgent&quot;, $r6)" Method="&lt;com.mobclick.android.f: android.location.Location a()&gt;">
+<AccessPath Value="$r6" Type="java.lang.String" TaintSubFields="true">
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$d0 = virtualinvoke $r4.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;com.mobclick.android.f: android.location.Location a()&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$d0 = virtualinvoke $r4.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;com.mobclick.android.f: android.location.Location a()&gt;">
+<AccessPath Value="$d0" Type="double" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r1.&lt;android.content.Context: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)&gt;($r2, $r3)" Method="&lt;com.mediawoz.goweather.ThemeSettingActivity: void a(android.content.Context)&gt;">
+<AccessPath Value="$r1" Type="com.mediawoz.goweather.ThemeSettingActivity" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;com.mediawoz.goweather.ThemeSettingActivity: java.util.List g&gt;" Type="java.util.Vector">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r2 = virtualinvoke $r3.&lt;android.content.pm.PackageManager: java.util.List getInstalledPackages(int)&gt;(0)" Method="&lt;com.mediawoz.goweather.ThemeSettingActivity: void d(java.lang.String)&gt;">
+<AccessPath Value="$r2" Type="java.util.List" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r8 = virtualinvoke $r5.&lt;android.content.pm.PackageManager: java.util.List getInstalledPackages(int)&gt;(0)" Method="&lt;com.mediawoz.goweather.ThemeSettingActivity: void c(java.lang.String)&gt;">
+<AccessPath Value="$r8" Type="java.util.List" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r2.&lt;java.io.FileOutputStream: void write(byte[],int,int)&gt;($r3, 0, $i0)" Method="&lt;com.mediawoz.goweather.ThemeSettingActivity: void a(java.io.InputStream,java.io.File)&gt;">
+<AccessPath Value="$r2" Type="java.io.FileOutputStream" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;java.io.OutputStream: byte[] innerArray&gt;" Type="byte[]">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r4 = virtualinvoke $r7.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;em: java.io.InputStream a(java.lang.String)&gt;">
+<AccessPath Value="$r4" Type="java.io.InputStream" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r16 = virtualinvoke $r11.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;gb: void run()&gt;">
+<AccessPath Value="$r16" Type="java.io.InputStream" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r5 = virtualinvoke $r3.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;com.mediawoz.goweather.ThemeSettingActivity: void a(java.lang.String,java.lang.String)&gt;">
+<AccessPath Value="$r5" Type="java.io.InputStream" TaintSubFields="true">
+</AccessPath>
+</Source>
+<Source Statement="$r16 = virtualinvoke $r11.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;gg: void run()&gt;">
+<AccessPath Value="$r16" Type="java.io.InputStream" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r4.&lt;android.content.Context: void sendBroadcast(android.content.Intent)&gt;($r3)" Method="&lt;hu: boolean onKey(android.content.DialogInterface,int,android.view.KeyEvent)&gt;">
+<AccessPath Value="$r4" Type="android.content.Context" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;com.mediawoz.goweather.ThemeSettingActivity: java.util.List b&gt;" Type="java.util.ArrayList">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r8 = virtualinvoke $r5.&lt;android.content.pm.PackageManager: java.util.List getInstalledPackages(int)&gt;(0)" Method="&lt;com.mediawoz.goweather.ThemeSettingActivity: void c(java.lang.String)&gt;">
+<AccessPath Value="$r8" Type="java.util.List" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+<Result>
+<Sink Statement="virtualinvoke $r11.&lt;java.io.FileOutputStream: void write(byte[],int,int)&gt;($r1, 0, $i5)" Method="&lt;com.exchange.Public.DownloadingService$a: void a()&gt;">
+<AccessPath Value="$r11" Type="java.io.FileOutputStream" TaintSubFields="true">
+<Fields>
+<Field Value="&lt;java.io.OutputStream: byte[] innerArray&gt;" Type="byte[]">
+</Field>
+</Fields>
+</AccessPath>
+</Sink>
+<Sources>
+<Source Statement="$r12 = virtualinvoke $r5.&lt;java.net.HttpURLConnection: java.io.InputStream getInputStream()&gt;()" Method="&lt;com.exchange.Public.DownloadingService$a: void a()&gt;">
+<AccessPath Value="$r12" Type="java.io.InputStream" TaintSubFields="true">
+</AccessPath>
+</Source>
+</Sources>
+</Result>
+</Results>
+<PerformanceData>
+<PerformanceEntry Name="CallgraphConstructionSeconds" Value="36">
+</PerformanceEntry>
+<PerformanceEntry Name="TaintPropagationSeconds" Value="415">
+</PerformanceEntry>
+<PerformanceEntry Name="PathReconstructionSeconds" Value="102">
+</PerformanceEntry>
+<PerformanceEntry Name="TotalRuntimeSeconds" Value="558">
+</PerformanceEntry>
+<PerformanceEntry Name="MaxMemoryConsumption" Value="3874">
+</PerformanceEntry>
+<PerformanceEntry Name="SourceCount" Value="151">
+</PerformanceEntry>
+<PerformanceEntry Name="SinkCount" Value="844">
+</PerformanceEntry>
+</PerformanceData>
+</DataFlowResults>
